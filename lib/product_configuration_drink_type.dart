@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProductConfigurationDrinkType extends StatelessWidget {
+
+  final String drinkName;
+
+  ProductConfigurationDrinkType({this.drinkName});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,10 +21,10 @@ class ProductConfigurationDrinkType extends StatelessWidget {
           ),
           Expanded(
               child: Text(
-                'Beverage Name',
+                '$drinkName',
                 style: TextStyle(fontWeight: FontWeight.bold),
               )),
-          Icon(Icons.navigate_next)
+          Text('0,00£')
         ],
       ),
     );

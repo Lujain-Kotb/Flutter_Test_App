@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DrinkListTile extends StatelessWidget {
+  final String beverageName;
+  Function onTapAction;
+
+  DrinkListTile({
+    this.beverageName,
+    this.onTapAction(BuildContext context, String beverageName),
+  });
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: () => onTapAction(context, beverageName),
+      child: Container(
         height: 70.0,
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
@@ -19,12 +28,13 @@ class DrinkListTile extends StatelessWidget {
             ),
             Expanded(
                 child: Text(
-              'Beverage Name',
+              '$beverageName',
               style: TextStyle(fontWeight: FontWeight.bold),
             )),
             Icon(Icons.navigate_next)
           ],
         ),
+      ),
     );
   }
 }
