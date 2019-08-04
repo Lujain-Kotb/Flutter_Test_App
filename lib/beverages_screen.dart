@@ -44,7 +44,7 @@ class BeveragesScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.0),
         itemBuilder: (context, position) => DrinkListTile(
               beverageName: BeverageList[position],
-              onTapAction: _onBeverageSelection,
+              onTapAction: () => _onBeverageSelection(context ,BeverageList[position]),
             ),
         itemCount: 10,
         //separatorBuilder:(context, position) => SizedBox(height: 5.0,) ,

@@ -6,12 +6,12 @@ class DrinkListTile extends StatelessWidget {
 
   DrinkListTile({
     this.beverageName,
-    this.onTapAction(BuildContext context, String beverageName),
+    this.onTapAction,
   });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTapAction(context, beverageName),
+      onTap: onTapAction,
       child: Container(
         height: 70.0,
         decoration: BoxDecoration(
