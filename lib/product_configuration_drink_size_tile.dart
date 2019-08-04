@@ -7,19 +7,25 @@ class ProductConfigurationDrinkSizeTile extends StatelessWidget {
   final IconData drinkImage;
   final String size;
   final String price;
-  final Color tileColor;
 
   void _selectedTile(BuildContext context, String size) {
     final currentConfig = Provider.of<SelectedConfiguration>(context);
-    currentConfig.selectedDrink(size);
+    currentConfig.setSelectedDrink(size);
   }
 
   ProductConfigurationDrinkSizeTile(
-      {this.drinkImage, this.size, this.price, this.tileColor});
+      {this.drinkImage, this.size, this.price});
+
+//  price: cardInfo.size == selectionData.selectedDrink
+//  ? '✓'
+//      : cardInfo.price,
+//  tileColor: cardInfo.size == selectionData.selectedDrink
+//  ? Theme.of(context).primaryColor
+//      : Colors.white,
 
   @override
   Widget build(BuildContext context) {
-    //final currentConfig = Provider.of<SelectedConfiguration>(context);
+    final currentConfig = Provider.of<SelectedConfiguration>(context);
     return GestureDetector(
             child: Card(
               child: Padding(
@@ -31,11 +37,14 @@ class ProductConfigurationDrinkSizeTile extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text('$size'),
                     ),
-                    Text('$price'),
+                    size == currentConfig.selectedDrink
+                        ? Text('✓'): Text('$price'),
                   ],
                 ),
               ),
-              color: tileColor,
+              color: size == currentConfig.selectedDrink
+                  ? Theme.of(context).primaryColor
+                  : Colors.white,
             ),
             onTap: () => _selectedTile(context, size),
     );

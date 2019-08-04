@@ -7,6 +7,8 @@ import 'side_menu.dart';
 import 'product_configuration_drink_type.dart';
 import 'selected_product_configuration.dart';
 import 'product_configuration_drink_size.dart';
+import 'category_separator.dart';
+import 'product_configuration_milk_size.dart';
 
 class ProductConfigurationScreen extends StatelessWidget {
   final String selectedDrink;
@@ -32,6 +34,8 @@ class ProductConfigurationScreen extends StatelessWidget {
                   return ProductConfigurationDrinkType(drinkName: selectedDrink);
                 case 1:
                   return ProductConfigurationDrinkSize();
+                case 2:
+                  return ProductConfigurationMilkSize();
                 default:
                   break;
               }
@@ -44,7 +48,9 @@ class ProductConfigurationScreen extends StatelessWidget {
                     height: 20.0,
                   );
                 case 1:
-                  return SizedBox(height: 20.0);
+                  return CategorySeparator(categoryIcon: Icons.fastfood, categoryName: 'Milch',);
+                case 2:
+                  return CategorySeparator(categoryIcon: Icons.fastfood, categoryName:'Sojamilch',);
                 default:
                   break;
               }

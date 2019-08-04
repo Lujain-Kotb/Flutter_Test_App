@@ -2,9 +2,9 @@ import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 
 class SelectedConfiguration with ChangeNotifier {
-  String _selectedDrink;
+  String _selectedDrink = "M";
   String _selectedDrinkSize;
-  String _selectedMilkSize;
+  String _selectedMilkSize = "M";
   String _selectedSoyMilkSize;
   bool _selectedExtraShot;
   String _selectedCaramelSize;
@@ -19,7 +19,15 @@ class SelectedConfiguration with ChangeNotifier {
      return _selectedDrink;
   }
 
-  set selectedDrink(String value) {
+  get selectedMilkSize {
+     return _selectedMilkSize;
+  }
+  setSelectedMilkSize(String value) {
+     _selectedMilkSize = value;
+     notifyListeners();
+  }
+
+  setSelectedDrink(String value) {
      _selectedDrink = value;
      notifyListeners();
   }

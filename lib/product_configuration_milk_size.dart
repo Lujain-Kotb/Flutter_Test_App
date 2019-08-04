@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'product_configuration_drink_size_tile.dart';
 import 'drink_sizes.dart';
+import 'package:german_flutter_app/product_configuration_milk_size_tile.dart';
 
-class ProductConfigurationDrinkSize extends StatelessWidget {
+class ProductConfigurationMilkSize extends StatelessWidget {
   var sizes = DrinkSizes.availableSizes;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,8 +15,7 @@ class ProductConfigurationDrinkSize extends StatelessWidget {
             .map(
               (cardInfo) =>
               Expanded(
-                child: ProductConfigurationDrinkSizeTile(
-                  drinkImage: cardInfo.drinkIcon,
+                child: ProductConfigurationMilkSizeTile(
                   size: cardInfo.size,
                   price:  cardInfo.price,
                 ),
@@ -28,4 +26,3 @@ class ProductConfigurationDrinkSize extends StatelessWidget {
     );
   }
 }
-
