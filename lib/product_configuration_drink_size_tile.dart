@@ -45,6 +45,7 @@ class ProductConfigurationDrinkSizeTile extends StatelessWidget {
               color: size == currentConfig.selectedDrink
                   ? Theme.of(context).primaryColor
                   : Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0), side: BorderSide(color: Theme.of(context).primaryColor, width: 1.0), ),
             ),
             onTap: () => _selectedTile(context, size),
     );

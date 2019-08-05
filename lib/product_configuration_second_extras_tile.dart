@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
+
 import 'selected_product_configuration.dart';
 
-class ProductConfigurationMilkSizeTile extends StatelessWidget {
+
+
+class ProductConfigurationSecondExtrasTile extends StatelessWidget {
+
   final String size;
   final String price;
 
   void _selectedTile(BuildContext context, String size) {
     final currentConfig = Provider.of<SelectedConfiguration>(context);
-    currentConfig.setSelectedMilkSize(size);
+    currentConfig.setSelectedSecondAdditionSize(size);
   }
 
-  ProductConfigurationMilkSizeTile({this.size, this.price});
+  ProductConfigurationSecondExtrasTile({this.size, this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +27,11 @@ class ProductConfigurationMilkSizeTile extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text('$size'),
-              size == currentConfig.selectedMilkSize ? Text('✓') : Text('$price'),
+              size == currentConfig.selectedSecondAdditionSize ? Text('✓') : Text('$price'),
             ],
           ),
         ),
-        color: size == currentConfig.selectedMilkSize ? Theme.of(context).primaryColor : Colors.white,
+        color: size == currentConfig.selectedSecondAdditionSize ? Theme.of(context).primaryColor : Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0), side: BorderSide(color: Theme.of(context).primaryColor, width: 1.0), ),
       ),
       onTap: () => _selectedTile(context, size),

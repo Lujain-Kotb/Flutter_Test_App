@@ -9,6 +9,10 @@ import 'selected_product_configuration.dart';
 import 'product_configuration_drink_size.dart';
 import 'category_separator.dart';
 import 'product_configuration_milk_size.dart';
+import 'product_configuration_soy_milk_size.dart';
+import 'product_configuration_extrashot_tile.dart';
+import 'product_configuration_extras_title.dart';
+import 'product_configuration_extras_table.dart';
 
 class ProductConfigurationScreen extends StatelessWidget {
   final String selectedDrink;
@@ -36,6 +40,12 @@ class ProductConfigurationScreen extends StatelessWidget {
                   return ProductConfigurationDrinkSize();
                 case 2:
                   return ProductConfigurationMilkSize();
+                case 3:
+                  return ProductConfigurationSoyMilkSize();
+                case 4:
+                  return ProductConfigurationExtrashotTile();
+                case 5:
+                  return ProductConfigurationExtrasTable();
                 default:
                   break;
               }
@@ -50,7 +60,15 @@ class ProductConfigurationScreen extends StatelessWidget {
                 case 1:
                   return CategorySeparator(categoryIcon: Icons.fastfood, categoryName: 'Milch',);
                 case 2:
-                  return CategorySeparator(categoryIcon: Icons.fastfood, categoryName:'Sojamilch',);
+                  return CategorySeparator(categoryIcon: Icons.fastfood, categoryName: 'Sojamilch',);
+                  case 3:
+                    return CategorySeparator(categoryIcon: Icons.fastfood, categoryName: 'Extrashot',);
+                case 4:
+                  return ProductConfigurationExtrasTitle();
+                case 5:
+                  return SizedBox(
+                    height: 20.0,
+                  );
                 default:
                   break;
               }
